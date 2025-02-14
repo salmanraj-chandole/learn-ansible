@@ -13,4 +13,10 @@
 
   roles:
     - sample
-    -
+
+
+# Variables precedence
+# 1. vars_files
+# 2. vars
+
+# n. roles defaults
