@@ -1,10 +1,12 @@
 - name: Demo on variables
-  hosts: all
+  hosts: localhost
   vars:
-    URL: google.com
+    URL: vars.google.com
+  vars_files:
+    - sample-vars.yml
   tasks:
     - name: Print URL
       ansible.builtin.debug:
-        msg: "URL = {{ URL }}"  # same like shell tou ate accessing variable with prefix $, here variable will be under {{ }}
+        msg: "URL - {{ URL }}, URL1 - {{ URL1 }}"  # same like shell tou ate accessing variable with prefix $, here variable will be under {{ }}
                                 # if the value starts with variable, then it requires quotes and we can use any single or double quotes.
                                 # Unlike shell, here in ansible single or double quotes does not have any difference
